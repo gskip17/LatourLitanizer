@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <title>Litanizer</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <body ng-app="Litanizer" ng-view>
+    <div ng-controller="MainController">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3" style="text-align:center">
+            <h1 class="page-header">Litanizer</h1>
+            <input ng-click="litanizer()" type="button" value="Litanize"/>
+            <input ng-model="number" type="integer" style="text-align:center" placeholder="Number of 'Things'"/>
+            <small> Enter Number of 'Things'</small>
+            <hr/>
+            <div ng-repeat="title in titles" style="font-weight:bold; text-align:center; line-height:22px; font-size:16px;">{{title}}</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/MediawikiJS.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="proj.js"></script>
+    <script src="js/controllers/MainController.js"></script>
+
+  </body>
+</html>
