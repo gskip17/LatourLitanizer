@@ -1,6 +1,6 @@
 app.controller('MainController',['$scope',function($scope){
   $scope.titles = [];
-  $scope.number = 5;
+  $scope.number = 10;
   var getRandomArticleTitle = function(){
     var mwjs = MediaWikiJS('https://en.wikipedia.org');
     var title
@@ -27,6 +27,23 @@ app.controller('MainController',['$scope',function($scope){
     });
   }
 
+  $scope.colorize = function(id){
+
+      var randomColor = Math.floor(Math.random()*16777215).toString(16);
+      $('#Title' + id + '').css({
+        color:'#' + randomColor
+      });
+  }
+
+  $scope.scrubTitle = function(title){
+    for(var i = 0; i < title.length; i++){
+      if(title.charAt(i) == ' '){
+        title.replace(" ","+");
+      }
+      return title;
+    }
+  }
+
   $scope.litanizer = function(){
     $scope.titles=[];
     if($scope.number > 50){
@@ -37,6 +54,8 @@ app.controller('MainController',['$scope',function($scope){
       getRandomArticleTitle();
     }
   }
+
+
 
   $scope.litanizer();
 

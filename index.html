@@ -3,6 +3,7 @@
   <title>Litanizer</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <body ng-app="Litanizer" ng-view>
+
     <div ng-controller="MainController">
       <div class="container">
         <div class="row">
@@ -12,12 +13,16 @@
             <input ng-model="number" type="integer" style="text-align:center" placeholder="Number of 'Things'"/>
             <small> Enter Number of 'Things'</small>
             <hr/>
-            <div ng-repeat="title in titles" style="font-weight:bold; text-align:center; line-height:22px; font-size:16px;">{{title}}</div>
+            <i ng-repeat="(key,title) in titles" id="Title{{key}}" style="font-weight:bold; text-align:center; line-height:22px; font-size:16px;">
+              <a href="https://www.google.com/search?q={{scrubTitle(title)}}">{{title}}{{colorize(key)}}.</a></i>
           </div>
         </div>
 
       </div>
     </div>
+
+
+
 
     <script src="js/MediawikiJS.js"></script>
     <script
